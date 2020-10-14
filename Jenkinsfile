@@ -20,14 +20,16 @@ pipeline {
           image 'frankescobar/allure-docker-service'
         }
       }
-      allure([
-               includeProperties: false,
-               jdk: '',
-               properties: [],
-               reportBuildPolicy: 'ALWAYS',
-               results: [[path: 'target/allure-results']]
-          ])
-      }
+      steps {
+        allure([
+                 includeProperties: false,
+                 jdk: '',
+                 properties: [],
+                 reportBuildPolicy: 'ALWAYS',
+                 results: [[path: 'target/allure-results']]
+            ])
+        }
+    }
 
   }
 }
