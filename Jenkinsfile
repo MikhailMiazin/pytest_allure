@@ -15,6 +15,11 @@ pipeline {
       }
     }
     stage('reports') {
+      agent {
+        docker {
+          image 'frankescobar/allure-docker-service'
+        }
+      }
       steps {
         script {
             allure([
