@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        sh 'pip install -r requirements.txt'
+        sh 'pip install -r --user requirements.txt'
         sh 'pytest -n=4 --alluredir=./allure-results tests/'
       }
     }
