@@ -31,6 +31,7 @@ pipeline {
                     results: [[path: './allure-results']]
             ])
         }
+        step([$class: 'WsCleanup'])
       }
     }
   }
