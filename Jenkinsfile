@@ -11,7 +11,7 @@ pipeline {
       }
       steps {
         sh 'pip install -r requirements.txt'
-        sh 'pytest -n=4 --alluredir=./allure-results tests/'
+        sh 'pytest -n=4 --alluredir=./allure-results'
       }
     }
     stage('reports') {
