@@ -18,6 +18,7 @@ pipeline {
       agent {
         docker {
           image 'frankescobar/allure-docker-service'
+          args '--user 0:0'
         }
       }
       steps {
