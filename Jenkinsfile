@@ -11,7 +11,7 @@ pipeline {
       }
       steps {
         sh 'pip install -r requirements.txt'
-        sh 'pytest -n=4 --alluredir=./allure-results tests/'
+        sh 'pytest -n=4 --alluredir=/var/lib/jenkins/workspace/j_pip_main/allure-results tests/'
       }
     }
     stage('reports') {
@@ -28,7 +28,7 @@ pipeline {
                     jdk: '',
                     properties: [],
                     reportBuildPolicy: 'ALWAYS',
-                    results: [[path: './allure-results']]
+                    results: [[path: '/var/lib/jenkins/workspace/j_pip_main/allure-results']]
             ])
         }
         step([$class: 'WsCleanup'])
